@@ -1,8 +1,8 @@
 ﻿- pierwsze 5/6 godzin poświęciłem na usystematyzowanie wiedzy o noed.js i zapoznanie się z technologią express. 
     W tym celu zapoznałem się z kilkoma poradnikami na yt.
 - nastepnie około 2/3 godzin zajęło mi stworznie mechanizmu pobierania danych z idoSell. 
-    Napotkałem na problem z wykorzystaniem do tego odpowiedniego endpointa ostatecznie zdecydowałem się na użycie /api/admin/v7/orders/orders/search
-    z parametrem shippmentStatus: "all", aby pobrać wszyskie zamuwienia. Nie użyłem zwykłego GETa ze względu na to że
+    Napotkałem problem z wykorzystaniem do tego odpowiedniego endpointa ostatecznie zdecydowałem się na użycie /api/admin/v7/orders/orders/search
+    z parametrem shippmentStatus: "all", aby pobrać wszyskie zamówienia. Nie użyłem zwykłego GETa ze względu na to że
     wymagał on podania konkretnych id produktu.
 - stworzenie podstaw kontrolera do pobierania wszystkich zamówień i aktualizacji zamówień ze statusem innym niż "finished", "lost", "false"
     zajęło mi mniej więcej 2 godziny.
@@ -26,4 +26,5 @@ Zwraca: {
 -GET /orders/csv - Zwraca wszystkie zamówienia zapisane w MongoDB w formacie CSV. Przyjmuje dwa opcjonalne parametry w querry minWorth i maxWorth, służące do filtrowania zamówień na podstawie ich wartości 
 
 -GET /orders/:id - Zwraca pojedyncze zamówienie z bazy danych po orderId. W bazie danych jako orderId wykorzystałem orderSerialNumber zwracany przez API idoSell
+
 
